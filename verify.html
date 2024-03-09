@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecting...</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .fade {
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+    }
+    #hello, #redirect {
+        font-size: 24px;
+    }
+</style>
+<script>
+    setTimeout(function() {
+        document.getElementById('hello').classList.add('fade');
+        setTimeout(function() {
+            document.getElementById('hello').style.display = 'none';
+            document.getElementById('redirect').classList.remove('fade');
+            setTimeout(function() {
+                window.location.href = "https://restorio.net/verify/1136344401262673920";
+            }, 3000); // 3 seconds delay before redirection
+        }, 2000);
+    }, 2000);
+</script>
+</head>
+<body>
+    <div id="hello">Hello</div>
+    <div id="redirect" class="fade">Redirecting to verification.<br>We do not log your IP address.<br>Thanks to restorio.net for verification</div>
+</body>
+</html>
